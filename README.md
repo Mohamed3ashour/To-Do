@@ -20,19 +20,19 @@ This repository contains an Angular application for managing a "To-Do" list with
   
 ## Getting Started:
 
-Clone this repository: git clone <repository-url>
-Install dependencies: npm install
-Start the JSON Server backend API: npm run start:backend
-Start the Angular application: npm start (ng serve -o )
-Open your browser and navigate to http://localhost:4200
+- Clone this repository: git clone <repository-url>
+- Install dependencies: npm install
+- Start the JSON Server backend API: npm run start:backend
+- Start the Angular application: npm start (ng serve -o )
+- Open your browser and navigate to http://localhost:4200
 
 ## Project Structure:
 
-/src - Contains the Angular application source code
-/components - Contains reusable components
-/services - Contains services for data management and API communication
-/Model - Contains the interfaces
-db.json - Contains the data for the to-do items (used by JSON Server)
+- /src - Contains the Angular application source code
+- /components - Contains reusable components
+- /services - Contains services for data management and API communication
+- /Model - Contains the interfaces
+- db.json - Contains the data for the to-do items (used by JSON Server)
 
 ## Note:
 For the application to work properly, ensure that the JSON Server backend API is running. The backend API provides a simulated RESTful API for data persistence, allowing you to interact with the to-do items.
