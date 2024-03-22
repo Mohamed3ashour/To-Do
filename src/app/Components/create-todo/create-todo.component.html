@@ -1,0 +1,37 @@
+<div class="container col-md-6 m-auto shadow p-4 rounded mt-5">
+    <div class="row ">
+    <h1 class="my-3">Add <span class="text-primary">Task</span></h1>
+  
+    <form (ngSubmit)="creatTodo()">
+<!-- input title field -->
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Task Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="newTodo.title" name="title"
+         required #title="ngModel" [ngClass]="{'is-invalid': title.invalid && (title.dirty || title.touched)}" />
+      </div>
+   <!-- input Description field -->
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" >Description</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          [(ngModel)]="newTodo.description"
+          name="description"
+        ></textarea>
+      </div>
+  
+<!-- add and Cancel button -->
+      <div class="row mt-4 mb-3">
+        <div class="col-md-4 mb-2 mb-md-0">
+            <button [disabled]="title.invalid" type="submit" class="btn btn-primary w-100" >+ Add Task</button>
+        </div>
+        <div class="col-md-4 ">
+            <a class="btn btn-outline-primary w-100" routerLink="/todos" role="button">Cancel</a>
+        </div>
+    </div>
+    
+    </form>
+    </div>
+  </div>
+  

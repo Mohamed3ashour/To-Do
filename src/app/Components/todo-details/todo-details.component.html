@@ -1,0 +1,48 @@
+
+@if (todo) {
+ 
+  <div class="container col-md-6 m-auto shadow p-4 rounded mt-5">
+    <div class="row ">
+
+    <h1 class="my-3">Todo <span class="text-primary">Detailse</span></h1>
+   
+    <form (ngSubmit)="updateTodo()" #form1="ngForm">
+  <!-- input title field -->
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Task Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title"
+         required #title="ngModel" [ngClass]="{'is-invalid': title.invalid && (title.dirty || title.touched)}"
+         [value]="todo.title" [(ngModel)]="todo.title"  />
+      </div>
+   <!-- input Description field -->
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" >Description</label>
+        <textarea class="form-control"
+          id="exampleFormControlTextarea1" rows="4"
+          [(ngModel)]="todo.description"
+          name="description"
+          [value]="todo.description"
+        ></textarea>
+      </div>
+  <!-- input completed checkbox field -->
+      <div class="form-check fs-4">
+        <input class="form-check-input border-3" type="checkbox" [value]="todo.completed" id="completed" name="completed" [(ngModel)]="todo.completed" />
+        <label class="form-check-label" for="completed">
+          Completed
+        </label>
+      </div>
+  
+<!-- Upadate and Cancel button -->
+      <div class="row mt-4 mb-3">
+        <div class="col-md-4 mb-2 mb-md-0">
+            <button [disabled]="form1.invalid" type="submit" class="btn btn-primary w-100" >Upadate</button>
+        </div>
+        <div class="col-md-4 ">
+            <a class="btn btn-outline-primary w-100" routerLink="/todos" role="button">Cancel</a>
+        </div>
+    </div>
+    </form>
+    </div>
+
+</div>
+}
